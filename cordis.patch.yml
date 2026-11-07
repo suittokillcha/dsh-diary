@@ -1,0 +1,7 @@
+# dsh-diary 插件声明
+# 通过 package.json 的 dsh.bundle.patch 引用此文件。
+# 服务注入（agents / sessions / llm）在 lib/index.js 中以 export const inject 声明，
+# 这里只保留 id / name。绝不在此或 inject 里写顶层不存在的 systemPrompt 服务（那会让 dsh 加载失败）。
+- insert:
+    - id: dsh-diary
+      name: dsh-diary

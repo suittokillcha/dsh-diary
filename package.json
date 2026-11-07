@@ -1,0 +1,35 @@
+{
+  "name": "dsh-diary",
+  "version": "1.0.3",
+  "description": "长期记忆插件：每轮原始对话零压缩落盘 + 今日分块摘要 + 封章日报与双方情绪曲线 + 开场注入索引表（最近 30 天日期表 + 今天摘要 + 未摘要尾巴）+ 被动/主动双路召回。所有写入异步吞错，绝不拖垮 dsh。",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**",
+    "scripts/**",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "@deepseek-ai/dsh-llm": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-skill": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
